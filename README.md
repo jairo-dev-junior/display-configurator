@@ -2,6 +2,9 @@
 
 Electron desktop app for Linux that controls external monitor settings through `ddcutil`, with staged edits, JSON profiles, import/export, and a gray-and-violet interface tuned for quick display management.
 
+<img width="2560" height="1440" alt="Screenshot From 2026-03-29 17-50-37" src="https://github.com/user-attachments/assets/1d12be11-13c7-4788-8441-a39ef4928bb3" />
+
+
 ## Features
 
 - detect external displays exposed through `ddcutil`
