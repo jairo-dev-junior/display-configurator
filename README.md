@@ -6,6 +6,7 @@ Electron desktop app for Linux that controls external monitor settings through `
 
 - detect external displays exposed through `ddcutil`
 - inspect supported VCP controls per monitor
+- include white level control when exposed by the monitor
 - stage multiple adjustments before applying them
 - save profile snapshots as readable JSON files
 - import and export profiles for sharing

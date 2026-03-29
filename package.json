@@ -1,0 +1,36 @@
+{
+  "name": "monitor-control",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Electron app for external monitor control on Linux using ddcutil",
+  "main": "dist-electron/main/main.js",
+  "type": "module",
+  "scripts": {
+    "dev": "concurrently -k \"npm:dev:renderer\" \"npm:dev:electron\" \"npm:dev:app\"",
+    "dev:renderer": "vite",
+    "dev:electron": "tsc -p tsconfig.electron.json --watch",
+    "dev:app": "wait-on tcp:5173 file:dist-electron/main/main.js && cross-env VITE_DEV_SERVER_URL=http://127.0.0.1:5173 electron .",
+    "build": "npm run build:renderer && npm run build:electron",
+    "build:renderer": "vite build",
+    "build:electron": "tsc -p tsconfig.electron.json",
+    "typecheck": "tsc -p tsconfig.json --noEmit && tsc -p tsconfig.electron.json --noEmit"
+  },
+  "dependencies": {
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0",
+    "zod": "^4.1.12",
+    "zustand": "^5.0.8"
+  },
+  "devDependencies": {
+    "@types/node": "^24.6.0",
+    "@types/react": "^19.2.2",
+    "@types/react-dom": "^19.2.2",
+    "@vitejs/plugin-react": "^5.1.0",
+    "concurrently": "^9.2.1",
+    "cross-env": "^10.1.0",
+    "electron": "^41.1.0",
+    "typescript": "^5.9.3",
+    "vite": "^8.0.3",
+    "wait-on": "^9.0.1"
+  }
+}
